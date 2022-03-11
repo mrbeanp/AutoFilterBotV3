@@ -32,7 +32,6 @@ TUTORIAL = "https://youtu.be/5hnYOKBzyi8"
 DATABASE_URI = environ['DATABASE_2']
 DATABASE_NAME = environ['BOT_NAME']
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
-SPELL_MODE = is_enabled((environ.get('SPELL_MODE', "on")), True)
 
 # Messages
 default_start_msg = """
