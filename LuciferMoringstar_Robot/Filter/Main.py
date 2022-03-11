@@ -130,6 +130,21 @@ async def group(client, message):
                     [InlineKeyboardButton(text=f"{filename}", url=f"https://telegram.dog/{nyva}?start=pr0fess0r_99_-_-_-_{file_id}")]
                 )
         else:
+            if SPELL_MODE:
+                reply = search.replace(" ", '+')  
+                reply_markup = InlineKeyboardMarkup([[
+                 InlineKeyboardButton("🎗️ Google 🎗️", url=f"https://www.google.com/search?q={reply}")
+                 ],[
+                 InlineKeyboardButton("🔍IMDB", url=f"https://www.imdb.com/find?q={reply}"),
+                 InlineKeyboardButton("Wikipedia🔎", url=f"https://en.m.wikipedia.org/w/index.php?search={reply}")
+                 ]]  
+                )    
+                LuciferMoringstar_delete=await message.reply_text(
+                    text=SET_SPEL_M.format(query=search, mention=message.from_user.mention),
+                    reply_markup=reply_markup                 
+                )
+                await asyncio.sleep(60) 
+                await LuciferMoringstar_delete.delete()
             return
         if not btn:
             return
